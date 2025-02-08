@@ -13,13 +13,27 @@
       JavaScript Arrays Study
     </h1>
 
-    <!-- Display Array -->
-    <div class="w-full max-w-lg bg-gray-800 p-5 rounded-lg shadow-md">
+    <!-- Select Active Vector -->
+    <div class="w-full max-w-lg bg-gray-800 p-4 rounded-lg shadow-md">
+      <label for="vectorSelect" class="text-orange-300 font-semibold"
+        >Select Vector:</label
+      >
+      <select
+        id="vectorSelect"
+        class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded-md focus:ring focus:ring-orange-400 outline-none"
+      ></select>
+    </div>
+
+    <!-- Array Display -->
+    <div class="w-full max-w-lg bg-gray-800 p-5 rounded-lg shadow-md mt-4">
       <h2 class="text-lg font-semibold text-orange-300 mb-2">Current Array:</h2>
       <p
         id="array"
         class="text-gray-300 bg-gray-700 p-3 rounded-md text-center"
       ></p>
+      <p class="text-orange-300 mt-3">
+        Array Length: <span id="vector-length" class="font-bold">0</span>
+      </p>
       <ol
         id="array-list"
         class="list-decimal pl-5 text-gray-300 mt-3 space-y-1"
@@ -84,13 +98,27 @@
         SHIFT
       </button>
 
-      <!-- Splice Button -->
-      <button
-        id="spliceButton"
-        class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
-      >
-        SPLICE
-      </button>
+      <!-- Create New Vector Form -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-md mt-4">
+        <h2 class="text-orange-300 font-semibold mb-2">Create a New Vector</h2>
+        <form
+          id="createVectorForm"
+          class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2"
+        >
+          <input
+            type="text"
+            id="vectorName"
+            placeholder="Vector Name"
+            class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded-md focus:ring focus:ring-orange-400 outline-none"
+          />
+          <button
+            type="submit"
+            class="bg-teal-600 hover:bg-teal-400 text-white font-bold py-2 px-4 rounded"
+          >
+            Create Vector
+          </button>
+        </form>
+      </div>
     </div>
 
     <!-- JavaScript -->
