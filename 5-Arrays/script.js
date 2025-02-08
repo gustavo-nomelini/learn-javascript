@@ -1,60 +1,68 @@
-// 08/02/2025
-// Author: Gustavo Lopes Nomelini
+// 08/02/2025 - Author: Gustavo Lopes Nomelini
 
-const empty = []; // Empty array
-const grades = [7.8, 8.9, 9.3];
-const names = ["Gustavo", "Jéssica"];
 const values = [37, true, "GUWOP"];
 
-// Search the <ol> element
-const list = document.getElementById("array-list");
-
-// Function to update the display of the array in both the <h2> and the list
+// Function to update the display of the array
 function updateDisplay() {
-  // Update the <h2> element with id="array"
-  document.getElementById("array").innerHTML = values.join(" | ");
+  document.getElementById("array").textContent = values.join(" | ");
 
-  // Clear the list element
-  list.innerHTML = "";
+  const list = document.getElementById("array-list");
+  list.innerHTML = ""; // Clear existing items
 
-  // Loop through the array and create list items
-  values.forEach((item, index) => {
+  values.forEach((item) => {
     const li = document.createElement("li");
     li.textContent = `${item}`;
-    // li.textContent = `Index ${index}: ${item}`; // Set text content with index (optional)
-    list.appendChild(li); // Append <li> to the list
+    list.appendChild(li);
   });
 }
 
 // Initial display update
 updateDisplay();
 
-// PUSH : ADD/APPEND item to last position
-// document.getElementById("pushButton").addEventListener("click", () => {
-//   values.push();
-// });
-//
-// Adding addEventListener to the form for the push operation
-const pushForm = document.getElementById("pushForm");
-pushForm.addEventListener("submit", function (event) {
-  event.preventDefault(); // prevent the form from reloading the page
-
-  // GET the input from the form
-  const pushInput = document.getElementById("pushInput");
-  const newValue = pushInput.value;
-
-  // use the push method to add new value to array
+// PUSH: Add new value at the end
+document.getElementById("pushForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const newValue = document.getElementById("pushInput").value;
   values.push(newValue);
-
-  //updating display after pushing the new value
   updateDisplay();
-
-  //clear the input field for the next entry
-  pushInput.value = "";
+  document.getElementById("pushInput").value = "";
 });
 
-// POP: Remove the last element when the "popButton" is clicked
+// POP: Remove last item
 document.getElementById("popButton").addEventListener("click", () => {
   values.pop();
-  updateDisplay(); // Correct function call
+  updateDisplay();
+});
+
+// UNSHIFT: Add item at the beginning
+document.getElementById("unshiftForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const newValue = document.getElementById("unshiftInput").value;
+  values.unshift(newValue);
+  updateDisplay();
+  document.getElementById("unshiftInput").value = "";
+});
+
+// SHIFT: Remove first item
+document.getElementById("shiftButton").addEventListener("click", () => {
+  values.shift();
+  updateDisplay();
+});
+
+// SPLICE: Remove/Add in the middle
+document.getElementById("spliceButton").addEventListener("click", () => {
+  const index = parseInt(prompt("Enter index to modify:"));
+  const deleteCount = parseInt(prompt("How many elements to remove?"));
+  const newValue = prompt("Enter a new value (or leave empty to just remove):");
+
+  if (!isNaN(index) && !isNaN(deleteCount)) {
+    if (newValue) {
+      values.splice(index, deleteCount, newValue);
+    } else {
+      values.splice(index, deleteCount);
+    }
+    updateDisplay();
+  } else {
+    alert("Invalid input!");
+  }
 });
