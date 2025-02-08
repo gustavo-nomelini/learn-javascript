@@ -1,35 +1,99 @@
 <!doctype html>
-<html lang=" en">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Arrays Studying</title>
-    <link href="style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Arrays Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <h1 id="test">Arrays Studying</h1>
-    <h2 id="array"></h2>
-    <ol id="array-list"></ol>
+  <body
+    class="bg-gray-900 text-white min-h-screen flex flex-col items-center p-5"
+  >
+    <h1 class="text-4xl font-bold text-orange-400 mb-6 text-center">
+      JavaScript Arrays Study
+    </h1>
 
-    <!-- <button id="pushButton">Push (Adicionar item ao final)</button> -->
-    <!-- <br /> -->
+    <!-- Display Array -->
+    <div class="w-full max-w-lg bg-gray-800 p-5 rounded-lg shadow-md">
+      <h2 class="text-lg font-semibold text-orange-300 mb-2">Current Array:</h2>
+      <p
+        id="array"
+        class="text-gray-300 bg-gray-700 p-3 rounded-md text-center"
+      ></p>
+      <ol
+        id="array-list"
+        class="list-decimal pl-5 text-gray-300 mt-3 space-y-1"
+      ></ol>
+    </div>
 
-    <form id="pushForm">
-      <label for="pushInput"
-        >Enter a new value to PUSH ( adicionar ao final):
-      </label>
-      <input type="text" id="pushInput" name="pushInput" required />
-      <button type="submit">PUSH</button>
-    </form>
+    <!-- Forms & Buttons Section -->
+    <div class="w-full max-w-lg mt-6 space-y-4">
+      <!-- Push Form -->
+      <form
+        id="pushForm"
+        class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2"
+      >
+        <input
+          type="text"
+          id="pushInput"
+          placeholder="Enter value to push"
+          class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded-md focus:ring focus:ring-orange-400 outline-none"
+          required
+        />
+        <button
+          type="submit"
+          class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
+        >
+          PUSH
+        </button>
+      </form>
 
-    <button id="popButton">Pop (Remover item do final)</button>
-    <br />
-    <button id="shiftButton">Shift (Remover do INÍCIO)</button>
-    <br />
-    <button id="unshiftButton">Unshift (Adicionar ao INÍCIO)</button>
-    <br />
-    <button id="spliceButton">Splice (Remover/Adicionar ao MEIO)</button>
-    <br />
+      <!-- Pop Button -->
+      <button
+        id="popButton"
+        class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
+      >
+        POP
+      </button>
+
+      <!-- Unshift Form -->
+      <form
+        id="unshiftForm"
+        class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2"
+      >
+        <input
+          type="text"
+          id="unshiftInput"
+          placeholder="Enter value to unshift"
+          class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded-md focus:ring focus:ring-orange-400 outline-none"
+          required
+        />
+        <button
+          type="submit"
+          class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
+        >
+          UNSHIFT
+        </button>
+      </form>
+
+      <!-- Shift Button -->
+      <button
+        id="shiftButton"
+        class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
+      >
+        SHIFT
+      </button>
+
+      <!-- Splice Button -->
+      <button
+        id="spliceButton"
+        class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
+      >
+        SPLICE
+      </button>
+    </div>
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
   </body>
 </html>
