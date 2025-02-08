@@ -58,7 +58,7 @@
           type="submit"
           class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
         >
-          PUSH
+          PUSH (end)
         </button>
       </form>
 
@@ -67,7 +67,7 @@
         id="popButton"
         class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
       >
-        POP
+        POP (end)
       </button>
 
       <!-- Unshift Form -->
@@ -86,7 +86,7 @@
           type="submit"
           class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
         >
-          UNSHIFT
+          UNSHIFT (start)
         </button>
       </form>
 
@@ -95,8 +95,73 @@
         id="shiftButton"
         class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
       >
-        SHIFT
+        SHIFT (start)
       </button>
+
+      <!-- Splice Button -->
+      <button
+        id="spliceButton"
+        class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
+      >
+        SPLICE
+      </button>
+
+      <!-- Slice Function Form -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-md">
+        <h2 class="text-orange-300 font-semibold mb-2">Slice Array</h2>
+        <form
+          id="sliceForm"
+          class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2"
+        >
+          <input
+            type="number"
+            id="sliceStart"
+            placeholder="Start Index"
+            class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded-md focus:ring focus:ring-orange-400 outline-none"
+          />
+          <input
+            type="number"
+            id="sliceEnd"
+            placeholder="End Index (optional)"
+            class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded-md focus:ring focus:ring-orange-400 outline-none"
+          />
+          <button
+            type="submit"
+            class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
+          >
+            SLICE
+          </button>
+        </form>
+        <p id="sliceResult" class="text-gray-300 mt-2"></p>
+      </div>
+
+      <!-- Concatenate Vectors Section -->
+      <div class="bg-gray-700 p-4 rounded-lg shadow-md mt-4 w-full max-w-lg">
+        <h2 class="text-yellow-200 font-semibold mb-2">Concatenate Arrays</h2>
+        <h3 class="text-yellow-400 font-semibold mb-2">
+          (the first vector will be inserted in the beggining of the second)
+        </h3>
+        <form id="concatForm" class="flex flex-col space-y-2">
+          <label class="text-white">Select First Vector:</label>
+          <select
+            id="concatVector1"
+            class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded-md focus:ring focus:ring-teal-400 outline-none"
+          ></select>
+
+          <label class="text-white">Select Second Vector:</label>
+          <select
+            id="concatVector2"
+            class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded-md focus:ring focus:ring-teal-400 outline-none"
+          ></select>
+
+          <button
+            type="submit"
+            class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
+          >
+            CONCATENATE
+          </button>
+        </form>
+      </div>
 
       <!-- Create New Vector Form -->
       <div class="bg-gray-800 p-4 rounded-lg shadow-md mt-4">
