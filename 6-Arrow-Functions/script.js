@@ -31,12 +31,10 @@ export const getPassingGrades = (grades) => {
   return grades.filter((grade) => grade >= 10);
 };
 
-/** @param {number[]} grades */
 export const getFailingGrades = (grades) => {
   return grades.filter((grade) => grade < 10);
 };
 
-/** @param {number[]} grades */
 export const getRaisedGrades = (grades) => {
   return grades.map((grade) => {
     return grade + 1 > 20 ? 20 : grade + 1;
